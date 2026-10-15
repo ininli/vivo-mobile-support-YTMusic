@@ -1,0 +1,38 @@
+name: 回報裝置相容性 / Device compatibility report
+description: 告訴我們這個方法在你的手機上能不能用 / Tell us whether this works on your phone
+labels: [compatibility]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: 手機型號 / Phone model
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OriginOS 與 Android 版本 / OriginOS and Android version
+    validations:
+      required: true
+  - type: input
+    id: player
+    attributes:
+      label: 原子隨身聽版本 / Origin Player version
+      description: "adb shell dumpsys package com.vivo.musicwidgetmix | grep versionName"
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: 結果 / Result
+      options:
+        - 可以用 / Works
+        - 部分可用 / Partly works
+        - 不能用 / Doesn't work
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補充說明 / Notes
+      description: 哪些地方可用、哪些不行（小工具、控制中心、鎖定畫面） / What works and what doesn't (widget, control center, lock screen)

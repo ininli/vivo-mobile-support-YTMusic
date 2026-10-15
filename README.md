@@ -182,6 +182,10 @@ So YouTube Music would have to be repackaged under one of these names. This proj
 - This is unofficial and not affiliated with vivo or Google. Use at your own risk.
 - "vivo", "OriginOS" and "YouTube Music" are trademarks of their respective owners.
 
+## 參與貢獻 / Contributing
+
+歡迎回報問題與發 PR，請先看 [CONTRIBUTING.md](CONTRIBUTING.md)。 / Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) first.
+
 ## 授權 / License
 
 MIT License，見 [LICENSE](LICENSE)。 / MIT License, see [LICENSE](LICENSE).

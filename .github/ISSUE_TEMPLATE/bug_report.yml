@@ -1,0 +1,46 @@
+name: 回報問題 / Bug report
+description: 腳本或原子隨身聽沒有照預期運作 / The script or Origin Player doesn't work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        請不要貼出裝置序號、帳號資訊或任何金鑰。
+        Please don't post device serial numbers, account details or any keys.
+  - type: input
+    id: model
+    attributes:
+      label: 手機型號 / Phone model
+      placeholder: vivo V2359A
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OriginOS 與 Android 版本 / OriginOS and Android version
+      placeholder: OriginOS 6 (Android 16)
+    validations:
+      required: true
+  - type: input
+    id: player
+    attributes:
+      label: 原子隨身聽版本 / Origin Player version
+      description: "adb shell dumpsys package com.vivo.musicwidgetmix | grep versionName"
+      placeholder: 6.2.0.3
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: status 的輸出 / Output of status
+      description: "python3 vivo_music_whitelist.py status"
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 發生了什麼 / What happened
+      description: 你做了什麼、預期的結果、實際的結果 / What you did, what you expected, and what actually happened
+    validations:
+      required: true
