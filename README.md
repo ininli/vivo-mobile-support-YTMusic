@@ -1,8 +1,8 @@
 # 讓 vivo 原子隨身聽支援 YouTube Music / YouTube Music for vivo Origin Player
 
-[繁體中文](#繁體中文) | [English](#english)
+[中文](#中文) | [English](#english)
 
-## 繁體中文
+## 中文
 
 vivo OriginOS 的「原子隨身聽」（Origin Player，套件 `com.vivo.musicwidgetmix`）只支援內建名單裡的音樂 App，YouTube Music 不在名單上，所以播放時不會出現在小工具、控制中心和鎖定畫面。
 
