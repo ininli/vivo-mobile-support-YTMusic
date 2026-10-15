@@ -67,7 +67,7 @@ python3 vivo_music_whitelist.py restore
 
 原子島能顯示哪些 App，是另一份**寫死在程式碼裡**的名單，不讀取任何系統設定。原子隨身聽是用 vivo 平台金鑰簽章的系統 App，沒有 root 就無法修改。
 
-唯一的方法是讓播放 App 的套件名稱剛好在那份名單裡。原子隨身聽 6.2.0.3 的原子島名單如下：
+只有套件名稱在這份名單裡的 App 才會顯示在原子島。原子隨身聽 6.2.0.3 的原子島名單如下：
 
 ```
 com.android.bbkmusic  com.tencent.qqmusic  com.kugou.android  com.netease.cloudmusic
@@ -81,10 +81,7 @@ com.yibasan.lizhifm  com.shinyv.cnr  com.audio.tingting  com.tencent.qqmusicpad
 com.shuqi.controller  com.salt.music
 ```
 
-這代表 YouTube Music 必須重新封裝成上面其中一個套件名稱。本專案不提供重新封裝的方法。如果你自己這樣做，有兩點要注意：
-
-- **不要用 `com.spotify.music`**：原子隨身聽對 Spotify 有特殊處理，會關掉進度條拖曳。另外，冒用 Google Play 上真實存在的 App 名稱，但簽章對不上，可能會讓 Google 的服務判定為可疑，造成播放異常。
-- **建議用不在 Google Play 上的名稱**，例如 `com.salt.music`。它在原子島名單裡、不會被當成合作 App，會走一般的 MediaSession 控制，實測原子島、播放控制和拖曳都正常。改用其他名稱之後，記得用 `apply --package <新名稱>` 把它也加進白名單（`com.salt.music` 本來就在內建名單裡）。
+YouTube Music 不在這份名單裡，所以本專案無法讓它顯示在原子島。這是系統本身的限制，除非 vivo 更新名單或開放設定。本專案不會修改任何 App，也不提供這類方法。
 
 ### 注意事項
 
@@ -157,7 +154,7 @@ The Atom Island (原子島, the dynamic capsule in the status bar) **cannot** be
 
 The apps the island can show come from a separate list that is **hardcoded** in the app and does not read any setting. Origin Player is a system app signed with vivo's platform key, so it cannot be modified without root.
 
-The only option is for the player's package name to be on that list. In Origin Player 6.2.0.3 the island list is:
+Only apps whose package name is on that list appear on the island. In Origin Player 6.2.0.3 the island list is:
 
 ```
 com.android.bbkmusic  com.tencent.qqmusic  com.kugou.android  com.netease.cloudmusic
@@ -171,10 +168,7 @@ com.yibasan.lizhifm  com.shinyv.cnr  com.audio.tingting  com.tencent.qqmusicpad
 com.shuqi.controller  com.salt.music
 ```
 
-So YouTube Music would have to be repackaged under one of these names. This project does not cover how to repackage it. If you do it yourself, keep two things in mind:
-
-- **Don't use `com.spotify.music`.** Origin Player special-cases Spotify and disables seek-bar dragging. Also, claiming the name of a real Google Play app with a mismatched signature may look suspicious to Google services and break playback.
-- **Prefer a name that is not on Google Play**, such as `com.salt.music`. It is on the island list but is not a cooperate app, so it goes through regular MediaSession control. In testing, the island, playback controls and seeking all worked. If you pick another name, add it to the whitelist with `apply --package <name>` (`com.salt.music` is already on the built-in list).
+YouTube Music is not on that list, so this project cannot make it appear on the island. This is a limitation of the system itself, unless vivo updates the list or exposes a setting. This project does not modify any app and does not provide ways to do so.
 
 ### Notes
 
